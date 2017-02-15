@@ -15,7 +15,7 @@
 #import "UUMessage.h"
 #import "IMManager.h"
 
-@interface RootViewController ()<UUInputFunctionViewDelegate,UUMessageCellDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface RootViewController ()<UUInputFunctionViewDelegate,UUMessageCellDelegate,UITableViewDataSource,UITableViewDelegate,NIMChatManagerDelegate>
 
 @property (strong, nonatomic) MJRefreshHeaderView *head;
 @property (strong, nonatomic) ChatModel *chatModel;
@@ -42,7 +42,9 @@
 -(void)getHistoryMessageRecord{
     
     NSArray *messageArray = [[IMManager share] getHistoryMessageRecordWithSessionID];
-    
+    for (NIMMessage *message in messageArray) {
+        
+    }
     
     
 }
@@ -236,5 +238,12 @@
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:cell.messageFrame.message.strName message:@"headImage clicked" delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil];
     [alert show];
 }
+
+#pragma mark - 消息回调
+- (void)onRecvMessages:(NSArray<NIMMessage *> *)messages{
+    NSLog(@"%@",messages.firstObject.messageId);
+}
+
+
 
 @end

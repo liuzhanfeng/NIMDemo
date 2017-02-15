@@ -66,6 +66,7 @@
     
     //发送消息
     [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:session error:nil];
+    
 }
 
 +(void)sendImageMessageWithImage:(UIImage *)image toUserID:(NSString *)toUserID{

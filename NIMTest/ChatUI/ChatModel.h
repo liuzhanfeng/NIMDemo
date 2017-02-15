@@ -18,6 +18,10 @@
 
 - (void)addRandomItemsToDataSource:(NSInteger)number;
 
+//添加自己发的消息
 - (void)addSpecifiedItem:(NSDictionary *)dic;
+
+//添加别人的消息
+-(void)addAdverseItem:(NSDictionary *)dic;
 
 @end
