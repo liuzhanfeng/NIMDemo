@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "NIMSDK.h"
+#import "IMManager.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    /* 注册SDK */
+    [[NIMSDK sharedSDK] registerWithAppID:@"45c6af3c98409b18a84451215d0bdd6e"
+                                  cerName:nil];
+
+    
+    [[IMManager share] manualLogin:@"f123456789" token:@"111111"];
+    
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[RootViewController alloc] init]];
     self.window.rootViewController = nav;
     return YES;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1FC5691E53FCA400FD440B /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FC5681E53FCA400FD440B /* IMManager.m */; };
+		3C1FC56C1E5449BA00FD440B /* NSString+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FC56B1E5449BA00FD440B /* NSString+NTES.m */; };
 		3C5C22A51E51AF23003DF674 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5C22A41E51AF23003DF674 /* main.m */; };
 		3C5C22A81E51AF23003DF674 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5C22A71E51AF23003DF674 /* AppDelegate.m */; };
 		3C5C22AE1E51AF23003DF674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5C22AC1E51AF23003DF674 /* Main.storyboard */; };
@@ -103,6 +105,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C1FC5671E53FCA400FD440B /* IMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
+		3C1FC5681E53FCA400FD440B /* IMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
+		3C1FC56A1E5449BA00FD440B /* NSString+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NTES.h"; sourceTree = "<group>"; };
+		3C1FC56B1E5449BA00FD440B /* NSString+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NTES.m"; sourceTree = "<group>"; };
 		3C5C22A01E51AF23003DF674 /* NIMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5C22A41E51AF23003DF674 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C5C22A61E51AF23003DF674 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -391,6 +397,10 @@
 		3C5C22D61E52B72A003DF674 /* ChatUI */ = {
 			isa = PBXGroup;
 			children = (
+				3C1FC56A1E5449BA00FD440B /* NSString+NTES.h */,
+				3C1FC56B1E5449BA00FD440B /* NSString+NTES.m */,
+				3C1FC5671E53FCA400FD440B /* IMManager.h */,
+				3C1FC5681E53FCA400FD440B /* IMManager.m */,
 				3C5C22D71E52B72A003DF674 /* ChatModel.h */,
 				3C5C22D81E52B72A003DF674 /* ChatModel.m */,
 				3C5C23271E52B72A003DF674 /* RootViewController.h */,
@@ -867,7 +877,9 @@
 				3C5C22A51E51AF23003DF674 /* main.m in Sources */,
 				3C5C23421E52B72A003DF674 /* AFURLRequestSerialization.m in Sources */,
 				3C5C233E1E52B72A003DF674 /* AFHTTPSessionManager.m in Sources */,
+				3C1FC5691E53FCA400FD440B /* IMManager.m in Sources */,
 				3C5C23621E52B72A003DF674 /* UIProgressView+AFNetworking.m in Sources */,
+				3C1FC56C1E5449BA00FD440B /* NSString+NTES.m in Sources */,
 				3C5C233F1E52B72A003DF674 /* AFNetworkReachabilityManager.m in Sources */,
 				3C5C236E1E52B72A003DF674 /* UUMessageContentButton.m in Sources */,
 				3C5C23601E52B72A003DF674 /* UIButton+AFNetworking.m in Sources */,
@@ -1035,6 +1047,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NIMTest/PrefixHeader.pch";
 				INFOPLIST_FILE = NIMTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1055,6 +1068,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NIMTest/PrefixHeader.pch";
 				INFOPLIST_FILE = NIMTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

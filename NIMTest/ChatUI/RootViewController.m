@@ -13,6 +13,7 @@
 #import "ChatModel.h"
 #import "UUMessageFrame.h"
 #import "UUMessage.h"
+#import "IMManager.h"
 
 @interface RootViewController ()<UUInputFunctionViewDelegate,UUMessageCellDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -28,12 +29,22 @@
     UUInputFunctionView *IFView;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self initBar];
     [self addRefreshViews];
     [self loadBaseViewsAndData];
+    [self getHistoryMessageRecord];
+}
+
+//获取历史消息记录
+-(void)getHistoryMessageRecord{
+    
+    NSArray *messageArray = [[IMManager share] getHistoryMessageRecordWithSessionID];
+    
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -54,7 +65,8 @@
 
 - (void)initBar
 {
-    self.title = @"乔布斯";
+    if (self.toUserName.length)self.title = self.toUserName;
+    else self.title = @"客服小茜";
 //    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@" private ",@" group "]];
 //    [segment addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
 //    segment.selectedSegmentIndex = 0;
@@ -71,6 +83,7 @@
     [self.chatModel populateRandomDataSource];
     [self.chatTableView reloadData];
 }
+
 
 - (void)addRefreshViews
 {
@@ -99,9 +112,8 @@
 
 - (void)loadBaseViewsAndData
 {
-    self.chatModel = [[ChatModel alloc]init];
+    self.chatModel = [[ChatModel alloc] init];
     self.chatModel.isGroupChat = NO;
-    [self.chatModel populateRandomDataSource];
     
     IFView = [[UUInputFunctionView alloc]initWithSuperVC:self];
     IFView.delegate = self;
@@ -162,6 +174,11 @@
                           @"type": @(UUMessageTypeText)};
     funcView.TextViewInput.text = @"";
     [self dealTheFunctionData:dic];
+    
+    //发送消息
+    
+    [IMManager sendMessage:message userID:@"l123456789"];
+    
 }
 
 - (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendPicture:(UIImage *)image

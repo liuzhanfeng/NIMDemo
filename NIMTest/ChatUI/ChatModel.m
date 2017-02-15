@@ -13,9 +13,18 @@
 
 @implementation ChatModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.dataSource = @[].mutableCopy;
+    }
+    return self;
+}
+
 - (void)populateRandomDataSource {
-    self.dataSource = [NSMutableArray array];
-    [self.dataSource addObjectsFromArray:[self additems:5]];
+//    self.dataSource = [NSMutableArray array];
+//    [self.dataSource addObjectsFromArray:[self additems:5]];
 }
 
 - (void)addRandomItemsToDataSource:(NSInteger)number{
@@ -35,7 +44,7 @@
     NSString *URLStr = @"http://img0.bdstatic.com/img/image/shouye/xinshouye/mingxing16.jpg";
     [dataDic setObject:@(UUMessageFromMe) forKey:@"from"];
     [dataDic setObject:[[NSDate date] description] forKey:@"strTime"];
-    [dataDic setObject:@"Hello,Sister" forKey:@"strName"];
+    [dataDic setObject:@"吴亚茜" forKey:@"strName"];
     [dataDic setObject:URLStr forKey:@"strIcon"];
     
     [message setWithDict:dataDic];
