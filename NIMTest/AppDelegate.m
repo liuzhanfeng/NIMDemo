@@ -23,11 +23,15 @@
     
     
     /* 注册SDK */
+    //21805e1f41594602ac33d2320a8d5c4d 自己的
+    //188e675e4c9e389ac5ef5835221e8d22
+    //45c6af3c98409b18a84451215d0bdd6e demo
+
     [[NIMSDK sharedSDK] registerWithAppID:@"45c6af3c98409b18a84451215d0bdd6e"
                                   cerName:nil];
 
     
-    [[IMManager share] manualLogin:@"f123456789" token:@"111111"];
+    [[IMManager share] manualLogin:@"18682152037" token:@"123456"];
     
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[RootViewController alloc] init]];
